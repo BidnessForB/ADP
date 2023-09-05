@@ -27,7 +27,7 @@ spec:
                 sh 'gunzip ./linux.tar.gz'
                 sh 'tar -xvf linux.tar'
                 sh 'mv postman2openapi-1.0.0-x86_64-unknown-linux-musl/postman2openapi .'
-                sh 'postman2openapi'
+                sh './postman2openapi'
             }
         }
         stage('Postman CLI Login') {
