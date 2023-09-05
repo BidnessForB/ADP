@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "3c73cfd8-3694-4b7a-a9e9-48d9f3b207c5",
+		"name": "Cat Fact API",
+		"description": "<img src=\"https://content.pstmn.io/40db1fd2-2228-4bea-9dc5-57764b27f28b/aW1hZ2UucG5n\">\n\n# Cat Facts - The API\n\nYou've probably seen this API in action on your favorite social media platform, or you may even be subscribed to our fascinating daily service! Now you can leverage this Postman collection and our OpenAPI 3.0 specification to embed CatFacts in your own products and services!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23889826-3c73cfd8-3694-4b7a-a9e9-48d9f3b207c5"
+	},
+	"item": [
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "Get a list of facts about cats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a86631dd-90be-4666-9705-df1ab2f81d73",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 800ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(800);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test('Length is a number', () => {",
+									"    _.each(jsonData, (item) => {",
+									"        pm.expect(typeof item[\"length\"]).to.equal('number');",
+									"    })",
+									"})",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"id": "e83f6962-1606-4bdc-a7d0-ddbeb3d33616",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/facts?max_length=200&limit=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"key": "max_length",
+									"value": "200"
+								},
+								{
+									"description": "limit the amount of results returned",
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Returns a a list of facts"
+					},
+					"response": [
+						{
+							"id": "a626c13a-a939-49cb-b5f8-b9b3fc2953f0",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://16ab538c-73db-496c-8972-eba749d42e37.mock.pstmn.io/facts?max_length=200&limit=2",
+									"protocol": "https",
+									"host": [
+										"16ab538c-73db-496c-8972-eba749d42e37",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"facts"
+									],
+									"query": [
+										{
+											"key": "max_length",
+											"value": "200"
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"description": "limit the amount of results returned"
+										}
+									]
+								},
+								"description": "Returns a a list of facts"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"fact\": \"<string>\",\n    \"length\": 200\n  },\n  {\n    \"fact\": \"<string>\",\n    \"length\": 200\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "fb317290-b4af-4070-86cd-c4240b159a24",
+			"description": "CatFacts can deliver multiple facts in a single call!"
+		},
+		{
+			"name": "fact",
+			"item": [
+				{
+					"name": "get Random Fact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5db3a2f9-e9d7-49f9-a72f-6de53254bfac",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 800ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(800);",
+									"});",
+									"",
+									"pm.test(\"Response contains fact\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.fact).to.exist;",
+									"});",
+									"",
+									"pm.test(\"Fact element is not null or zero-length\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.fact).to.not.be.null;",
+									"});",
+									"",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"id": "b8622b28-726a-432c-a72a-a6dca1dc8739",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/fact?max_length=300",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fact"
+							],
+							"query": [
+								{
+									"description": "maximum length of returned fact",
+									"key": "max_length",
+									"value": "300"
+								}
+							]
+						},
+						"description": "Returns a random fact"
+					},
+					"response": [
+						{
+							"id": "9cd4a988-d996-458a-b12e-6e5235fd5dfd",
+							"name": "Normal response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact?max_length=200",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "max_length",
+											"value": "200"
+										}
+									]
+								},
+								"description": "Returns a random fact"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"fact\": \"<string>\",\n  \"length\": 200\n}"
+						},
+						{
+							"id": "369db8ce-de80-4ace-a379-3ca1cf234f6b",
+							"name": "Fact not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/fact?max_length=200",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fact"
+									],
+									"query": [
+										{
+											"description": "maximum length of returned fact",
+											"key": "max_length",
+											"value": "200"
+										}
+									]
+								},
+								"description": "Returns a random fact"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "1486212e-1092-4851-8af6-2a4f8c9dacc2"
+		},
+		{
+			"name": "breeds",
+			"item": [
+				{
+					"name": "get Breeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6837b21-d95d-4209-b7ae-b4353ae2b35e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 800ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(800);",
+									"});",
+									"",
+									"pm.test(\"Response contains fact\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0].breed).to.exist;",
+									"});",
+									"",
+									"pm.test(\"Fact element is not null or zero-length\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(\"JSON: \", jsonData)",
+									"    pm.expect(jsonData[0].breed).to.not.be.undefined;",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "094c8f12-7e57-4427-aeca-50829b905ef1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/breeds?limit=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"breeds"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "This is a description"
+								}
+							]
+						},
+						"description": "Returns a a list of breeds"
+					},
+					"response": [
+						{
+							"id": "f77f02bb-c5d8-48a3-b43f-1b1b553bfcdd",
+							"name": "Normal operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/breeds?limit=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"breeds"
+									],
+									"query": [
+										{
+											"description": "This is a description",
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								},
+								"description": "Returns a a list of breeds"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  },\n  {\n    \"breed\": \"<string>\",\n    \"country\": \"<string>\",\n    \"origin\": \"<string>\",\n    \"coat\": \"<string>\",\n    \"pattern\": \"<string>\"\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "7d7696d9-17c6-481b-af4c-fbcd10e5d19a"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cd4bc046-b01f-4556-ae68-fa16516d0988",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cca6b7c8-ef1a-4a7f-ba60-19a34339d308",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f32e025f-1cae-49e8-ba16-57cc19499106",
+			"key": "baseUrl",
+			"value": "https://5cd614ba-1b51-4800-8f80-d2776eeb57e7.mock.pstmn.io",
+			"type": "string"
+		}
+	]
+}

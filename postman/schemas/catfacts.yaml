@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: Cat Fact API
+  description: |-
+    <img src="https://content.pstmn.io/40db1fd2-2228-4bea-9dc5-57764b27f28b/aW1hZ2UucG5n">
+
+    # Cat Facts - The API
+
+    You've probably seen this API in action on your favorite social media platform, or you may even be subscribed to our fascinating daily service! Now you can leverage this Postman collection and our OpenAPI 3.0 specification to embed CatFacts in your own products and services!
+  version: 1.0.0
+  contact: {}
+servers:
+- url: https://5cd614ba-1b51-4800-8f80-d2776eeb57e7.mock.pstmn.io
+paths:
+  /facts:
+    get:
+      tags:
+      - Facts
+      summary: Get a list of facts about cats
+      description: Returns a a list of facts
+      operationId: getAListOfFactsAboutCats
+      parameters:
+      - name: max_length
+        in: query
+        schema:
+          type: string
+          example: '200'
+      - name: limit
+        in: query
+        schema:
+          type: string
+          example: '2'
+        description: limit the amount of results returned
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    fact:
+                      type: string
+                      example: <string>
+                    length:
+                      type: number
+                      example: 200
+                example:
+                - fact: <string>
+                  length: 200
+                - fact: <string>
+                  length: 200
+              examples:
+                successful operation:
+                  value:
+                  - fact: <string>
+                    length: 200
+                  - fact: <string>
+                    length: 200
+  /fact:
+    get:
+      tags:
+      - fact
+      summary: get Random Fact
+      description: Returns a random fact
+      operationId: getRandomFact
+      parameters:
+      - name: max_length
+        in: query
+        schema:
+          type: string
+          example: '300'
+        description: maximum length of returned fact
+      responses:
+        '200':
+          description: Normal response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fact:
+                    type: string
+                    example: <string>
+                  length:
+                    type: number
+                    example: 200
+              examples:
+                Normal response:
+                  value:
+                    fact: <string>
+                    length: 200
+        '404':
+          description: Fact not found
+          content: {}
+  /breeds:
+    get:
+      tags:
+      - breeds
+      summary: get Breeds
+      description: Returns a a list of breeds
+      operationId: getBreeds
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+          example: '2'
+        description: This is a description
+      responses:
+        '200':
+          description: Normal operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    breed:
+                      type: string
+                      example: <string>
+                    coat:
+                      type: string
+                      example: <string>
+                    country:
+                      type: string
+                      example: <string>
+                    origin:
+                      type: string
+                      example: <string>
+                    pattern:
+                      type: string
+                      example: <string>
+                example:
+                - breed: <string>
+                  coat: <string>
+                  country: <string>
+                  origin: <string>
+                  pattern: <string>
+                - breed: <string>
+                  coat: <string>
+                  country: <string>
+                  origin: <string>
+                  pattern: <string>
+              examples:
+                Normal operation:
+                  value:
+                  - breed: <string>
+                    coat: <string>
+                    country: <string>
+                    origin: <string>
+                    pattern: <string>
+                  - breed: <string>
+                    coat: <string>
+                    country: <string>
+                    origin: <string>
+                    pattern: <string>
+tags:
+- name: Facts
+  description: CatFacts can deliver multiple facts in a single call!
+- name: fact
+- name: breeds
+
