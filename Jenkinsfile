@@ -37,10 +37,12 @@ spec:
                 }
             }
         }
+        /*
         stage('Running collection') {
             steps {
                 sh 'postman collection run ${POSTMAN_COLLECTION_ID} --integration-id "145246-${JOB_NAME}${BUILD_NUMBER}" --color off'
             }
         }
+        */
     }
 }
