@@ -23,7 +23,7 @@ spec:
     stages {
         stage('Install Postman CLI') {
             steps {
-                sh 'curl -LJ0 "https://github.com/kevinswiber/postman2openapi/releases/download/1.0.0/postman2openapi-1.0.0-x86_64-unknown-linux-musl.tar.gz --output linux.tar.gz'
+                sh 'curl -LJ0 "https://github.com/kevinswiber/postman2openapi/releases/download/1.0.0/postman2openapi-1.0.0-x86_64-unknown-linux-musl.tar.gz --output linux.tar.gz"'
                 sh 'gunzip ./linux.tar.gz'
                 sh 'tar -xvf linux.tar'
                 sh 'mv postman2openapi-1.0.0-x86_64-unknown-linux-musl/postman2openapi .'
