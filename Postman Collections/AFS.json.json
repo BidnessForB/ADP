@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "ef025ab8-ca1a-4ccf-a0c4-5d2e081d8097",
+		"name": "AccountField Service",
+		"description": "The Account Field Service supports operations to maintain fields for the account object.  \n\nContact Support:\n Name: ESF_APServicesDesignTeam\n Email: DL-NA-ESF_APServicesDesignTeam@fiserv.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update Account Fields",
+			"item": [
+				{
+					"name": "Modifies Account Fields",
+					"id": "f884c7fb-60af-4ae8-8d34-ac7e9abdcf60",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "EFXHeader",
+								"value": "{ \"TrnId\": \"622182\", \"OrganizationId\": \"PRMOrg10\", \"VendorId\": \"112233\", \"Context\":{ \"Channel\": \"WEB\" } }",
+								"description": "(Required) The message header request aggregate contains common information for all request messages"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"AcctFieldInfo\": {\n    \"EffDt\": \"9117-51-56\",\n    \"SecurityCode\": -87790924,\n    \"AcctFieldData\": [\n      {\n        \"DataIdent\": \"aliq\",\n        \"SeqId\": \"in dolor esse tempor\",\n        \"Value\": \"nisi\",\n        \"FieldModifier\": 60762856,\n        \"DataType\": \"culpa non\"\n      },\n      {\n        \"DataIdent\": \"pariatur nisi \",\n        \"SeqId\": \"in\",\n        \"Value\": \"aliqua\",\n        \"FieldModifier\": -80591623,\n        \"DataType\": \"dolore venia\"\n      }\n    ]\n  },\n  \"AcctFieldKeys\": {\n    \"AcctId\": \"ut ipsum veniam\",\n    \"AcctType\": \"officia id Lorem\"\n  },\n  \"OvrdAutoAckInd\": true,\n  \"OvrdExceptionData\": {\n    \"OverrideException\": [\n      {\n        \"SubjectRole\": \"nisi dolor consequat\",\n        \"SubjectIdent\": \"consectetur i\",\n        \"OvrdExceptionCode\": \"velit id\",\n        \"OvrdElement\": {\n          \"Path\": \"aliqua adip\",\n          \"ServerPath\": \"fugiat ex sint ad\",\n          \"Value\": \"sunt laborum exercitation incididunt\"\n        }\n      },\n      {\n        \"SubjectRole\": \"id et veniam\",\n        \"SubjectIdent\": \"amet ut\",\n        \"OvrdExceptionCode\": \"lab\",\n        \"OvrdElement\": {\n          \"Path\": \"irure magna qui\",\n          \"ServerPath\": \"ut elit do ipsum\",\n          \"Value\": \"\"\n        }\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/accounts/fields",
+						"description": "Modifies account information."
+					},
+					"response": [
+						{
+							"id": "ed587950-03cf-4e88-86e4-8f165ff13cd4",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) The message header request aggregate contains common information for all request messages",
+										"key": "EFXHeader",
+										"value": "{ \"TrnId\": \"622182\", \"OrganizationId\": \"PRMOrg10\", \"VendorId\": \"112233\", \"Context\":{ \"Channel\": \"WEB\" } }"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"AcctFieldInfo\": {\n    \"EffDt\": \"9117-51-56\",\n    \"SecurityCode\": -87790924,\n    \"AcctFieldData\": [\n      {\n        \"DataIdent\": \"aliq\",\n        \"SeqId\": \"in dolor esse tempor\",\n        \"Value\": \"nisi\",\n        \"FieldModifier\": 60762856,\n        \"DataType\": \"culpa non\"\n      },\n      {\n        \"DataIdent\": \"pariatur nisi \",\n        \"SeqId\": \"in\",\n        \"Value\": \"aliqua\",\n        \"FieldModifier\": -80591623,\n        \"DataType\": \"dolore venia\"\n      }\n    ]\n  },\n  \"AcctFieldKeys\": {\n    \"AcctId\": \"ut ipsum veniam\",\n    \"AcctType\": \"officia id Lorem\"\n  },\n  \"OvrdAutoAckInd\": true,\n  \"OvrdExceptionData\": {\n    \"OverrideException\": [\n      {\n        \"SubjectRole\": \"nisi dolor consequat\",\n        \"SubjectIdent\": \"consectetur i\",\n        \"OvrdExceptionCode\": \"velit id\",\n        \"OvrdElement\": {\n          \"Path\": \"aliqua adip\",\n          \"ServerPath\": \"fugiat ex sint ad\",\n          \"Value\": \"sunt laborum exercitation incididunt\"\n        }\n      },\n      {\n        \"SubjectRole\": \"id et veniam\",\n        \"SubjectIdent\": \"amet ut\",\n        \"OvrdExceptionCode\": \"lab\",\n        \"OvrdElement\": {\n          \"Path\": \"irure magna qui\",\n          \"ServerPath\": \"ut elit do ipsum\",\n          \"Value\": \"\"\n        }\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/accounts/fields"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"Status\": {\n    \"Severity\": \"Error\",\n    \"StatusCode\": \"eiusm\",\n    \"StatusDesc\": \"qui\",\n    \"SvcProviderName\": \"mollit esse\",\n    \"Id\": \"ut magna\",\n    \"ServerStatusCode\": \"adipisicing cu\",\n    \"ServerStatusDesc\": \"non sunt dolore irure\",\n    \"OvrdExceptionInd\": true,\n    \"SubjectRole\": \"et magna\",\n    \"SubjectElement\": [\n      {\n        \"Path\": \"dolore proident consectetur sit\",\n        \"ServerPath\": \"\",\n        \"Value\": \"ipsum reprehenderit sed aliqua\"\n      },\n      {\n        \"Path\": \"proident\",\n        \"ServerPath\": \"dolore nulla deserunt fugiat\",\n        \"Value\": \"laboris Excepteur ea sit\"\n      }\n    ],\n    \"ContentHTML\": \"veniam est proident ut nulla\",\n    \"AdditionalStatus\": [\n      {\n        \"StatusCode\": \"esse m\",\n        \"StatusDesc\": \"culpa ut occaecat\",\n        \"Severity\": \"Warning\",\n        \"SvcProviderName\": \"dolore ut veniam\",\n        \"ServerStatusCode\": \"reprehenderit\",\n        \"ServerStatusDesc\": \"sunt ea laboris Duis\",\n        \"OvrdExceptionInd\": true,\n        \"SubjectElement\": [\n          {\n            \"Path\": \"cillum laboris Excepteur in\",\n            \"ServerPath\": \"incididunt eiusmod\",\n            \"Value\": \"nisi Excepteur voluptate et\"\n          },\n          {\n            \"Path\": \"dolore anim elit\",\n            \"ServerPath\": \"mollit eiusmod laboris adipisicing proident\",\n            \"Value\": \"consequat incididunt irure\"\n          }\n        ]\n      },\n      {\n        \"StatusCode\": \"\",\n        \"StatusDesc\": \"Excepteur dolore cillum\",\n        \"Severity\": \"Info\",\n        \"SvcProviderName\": \"quis non enim moll\",\n        \"ServerStatusCode\": \"cons\",\n        \"ServerStatusDesc\": \"adipisicing officia est\",\n        \"OvrdExceptionInd\": true,\n        \"SubjectElement\": [\n          {\n            \"Path\": \"nostrud exercitation nulla\",\n            \"ServerPath\": \"et\",\n            \"Value\": \"quis mollit aliqua aliquip\"\n          },\n          {\n            \"Path\": \"voluptate ut laboris aliquip\",\n            \"ServerPath\": \"in ut Excepteur veniam\",\n            \"Value\": \"Duis labore enim irure\"\n          }\n        ]\n      }\n    ]\n  },\n  \"AcctFieldStatusRec\": {\n    \"AcctFieldKeys\": {\n      \"AcctId\": \"exercitation laboru\",\n      \"AcctType\": \"dolor ut\"\n    },\n    \"AcctFieldStatus\": {\n      \"AcctFieldStatusCode\": \"incididunt in anim\",\n      \"EffDt\": \"9254-98-25\"\n    },\n    \"AcctFieldError\": [\n      {\n        \"DataIdent\": \"amet aute\",\n        \"Desc\": \"sit ullamco irure\",\n        \"ErrorCode\": 82107408,\n        \"SeqId\": \"commodo nulla ullamc\"\n      },\n      {\n        \"DataIdent\": \"veniam pariatur labore\",\n        \"Desc\": \"veniam labore consequat\",\n        \"ErrorCode\": -38824163,\n        \"SeqId\": \"ex id nisi\"\n      }\n    ]\n  }\n}"
+						},
+						{
+							"id": "85e8484c-e57e-43b6-a3ac-d17adb01153d",
+							"name": "Unexpected error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) The message header request aggregate contains common information for all request messages",
+										"key": "EFXHeader",
+										"value": "{ \"TrnId\": \"622182\", \"OrganizationId\": \"PRMOrg10\", \"VendorId\": \"112233\", \"Context\":{ \"Channel\": \"WEB\" } }"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"AcctFieldInfo\": {\n    \"EffDt\": \"9117-51-56\",\n    \"SecurityCode\": -87790924,\n    \"AcctFieldData\": [\n      {\n        \"DataIdent\": \"aliq\",\n        \"SeqId\": \"in dolor esse tempor\",\n        \"Value\": \"nisi\",\n        \"FieldModifier\": 60762856,\n        \"DataType\": \"culpa non\"\n      },\n      {\n        \"DataIdent\": \"pariatur nisi \",\n        \"SeqId\": \"in\",\n        \"Value\": \"aliqua\",\n        \"FieldModifier\": -80591623,\n        \"DataType\": \"dolore venia\"\n      }\n    ]\n  },\n  \"AcctFieldKeys\": {\n    \"AcctId\": \"ut ipsum veniam\",\n    \"AcctType\": \"officia id Lorem\"\n  },\n  \"OvrdAutoAckInd\": true,\n  \"OvrdExceptionData\": {\n    \"OverrideException\": [\n      {\n        \"SubjectRole\": \"nisi dolor consequat\",\n        \"SubjectIdent\": \"consectetur i\",\n        \"OvrdExceptionCode\": \"velit id\",\n        \"OvrdElement\": {\n          \"Path\": \"aliqua adip\",\n          \"ServerPath\": \"fugiat ex sint ad\",\n          \"Value\": \"sunt laborum exercitation incididunt\"\n        }\n      },\n      {\n        \"SubjectRole\": \"id et veniam\",\n        \"SubjectIdent\": \"amet ut\",\n        \"OvrdExceptionCode\": \"lab\",\n        \"OvrdElement\": {\n          \"Path\": \"irure magna qui\",\n          \"ServerPath\": \"ut elit do ipsum\",\n          \"Value\": \"\"\n        }\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/accounts/fields"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"Status\": {\n    \"Severity\": \"Error\",\n    \"StatusCode\": \"eiusm\",\n    \"StatusDesc\": \"qui\",\n    \"SvcProviderName\": \"mollit esse\",\n    \"Id\": \"ut magna\",\n    \"ServerStatusCode\": \"adipisicing cu\",\n    \"ServerStatusDesc\": \"non sunt dolore irure\",\n    \"OvrdExceptionInd\": true,\n    \"SubjectRole\": \"et magna\",\n    \"SubjectElement\": [\n      {\n        \"Path\": \"dolore proident consectetur sit\",\n        \"ServerPath\": \"\",\n        \"Value\": \"ipsum reprehenderit sed aliqua\"\n      },\n      {\n        \"Path\": \"proident\",\n        \"ServerPath\": \"dolore nulla deserunt fugiat\",\n        \"Value\": \"laboris Excepteur ea sit\"\n      }\n    ],\n    \"ContentHTML\": \"veniam est proident ut nulla\",\n    \"AdditionalStatus\": [\n      {\n        \"StatusCode\": \"esse m\",\n        \"StatusDesc\": \"culpa ut occaecat\",\n        \"Severity\": \"Warning\",\n        \"SvcProviderName\": \"dolore ut veniam\",\n        \"ServerStatusCode\": \"reprehenderit\",\n        \"ServerStatusDesc\": \"sunt ea laboris Duis\",\n        \"OvrdExceptionInd\": true,\n        \"SubjectElement\": [\n          {\n            \"Path\": \"cillum laboris Excepteur in\",\n            \"ServerPath\": \"incididunt eiusmod\",\n            \"Value\": \"nisi Excepteur voluptate et\"\n          },\n          {\n            \"Path\": \"dolore anim elit\",\n            \"ServerPath\": \"mollit eiusmod laboris adipisicing proident\",\n            \"Value\": \"consequat incididunt irure\"\n          }\n        ]\n      },\n      {\n        \"StatusCode\": \"\",\n        \"StatusDesc\": \"Excepteur dolore cillum\",\n        \"Severity\": \"Info\",\n        \"SvcProviderName\": \"quis non enim moll\",\n        \"ServerStatusCode\": \"cons\",\n        \"ServerStatusDesc\": \"adipisicing officia est\",\n        \"OvrdExceptionInd\": true,\n        \"SubjectElement\": [\n          {\n            \"Path\": \"nostrud exercitation nulla\",\n            \"ServerPath\": \"et\",\n            \"Value\": \"quis mollit aliqua aliquip\"\n          },\n          {\n            \"Path\": \"voluptate ut laboris aliquip\",\n            \"ServerPath\": \"in ut Excepteur veniam\",\n            \"Value\": \"Duis labore enim irure\"\n          }\n        ]\n      }\n    ]\n  },\n  \"AcctFieldStatusRec\": {\n    \"AcctFieldKeys\": {\n      \"AcctId\": \"exercitation laboru\",\n      \"AcctType\": \"dolor ut\"\n    },\n    \"AcctFieldStatus\": {\n      \"AcctFieldStatusCode\": \"incididunt in anim\",\n      \"EffDt\": \"9254-98-25\"\n    },\n    \"AcctFieldError\": [\n      {\n        \"DataIdent\": \"amet aute\",\n        \"Desc\": \"sit ullamco irure\",\n        \"ErrorCode\": 82107408,\n        \"SeqId\": \"commodo nulla ullamc\"\n      },\n      {\n        \"DataIdent\": \"veniam pariatur labore\",\n        \"Desc\": \"veniam labore consequat\",\n        \"ErrorCode\": -38824163,\n        \"SeqId\": \"ex id nisi\"\n      }\n    ]\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "b4daf55f-fae1-4eb8-ad5a-6858e255ad33"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b7fb0475-4989-4ec7-a12b-b4cc1633f33b",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "32f086d0-6462-46cb-8f5a-c2ced6365466",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://6c219ebc-c201-4fc6-8d08-023a2d3c97ad.mock.pstmn.io"
+		}
+	]
+}
